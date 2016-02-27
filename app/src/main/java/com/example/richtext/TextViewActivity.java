@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -25,6 +26,7 @@ public class TextViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_view);
         TextView textView = (TextView) findViewById(R.id.text_view);
+        textView.setMovementMethod(new LinkMovementMethod());
         textView.setText(Html.fromHtml(getString(R.string.sample),
                 new PicassoImageGetter(textView), null));
     }

@@ -38,6 +38,7 @@ public class WebViewActivity extends AppCompatActivity {
         }
         webView.setBackgroundColor(ContextCompat.getColor(webView.getContext(),
                 getIdRes(webView.getContext(), backgroundColor)));
+        webView.getSettings().setBuiltInZoomControls(true); // optional
         webView.loadDataWithBaseURL(null,
                 wrapHtml(webView.getContext(), html, textColor, linkColor, textSize, margin),
                 "text/html", "UTF-8", null);
